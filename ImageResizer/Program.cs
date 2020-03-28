@@ -10,20 +10,20 @@ namespace ImageResizer
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             string sourcePath = Path.Combine(Environment.CurrentDirectory, "images");
             string destinationPath = Path.Combine(Environment.CurrentDirectory, "output");
             List<long> timeli = new List<long>();
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 8; i++)
             {
-                long time = await Program.DoitAsync(sourcePath, destinationPath);
+                long time = Program.Doit(sourcePath, destinationPath);
                 timeli.Add(time);
             }
             Console.WriteLine($"平均花費時間: {timeli.Average()} ms");
         }
 
-        static async Task<long> DoitAsync(string sourcePath, string destinationPath)
+        static long Doit(string sourcePath, string destinationPath)
         {
             
             ImageProcess imageProcess = new ImageProcess();

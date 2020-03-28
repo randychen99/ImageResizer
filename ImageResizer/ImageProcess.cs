@@ -55,7 +55,7 @@ namespace ImageResizer
                 tasks.Add(
                     Task.Run(async () =>
                     {
-                        //Console.WriteLine(filePath);
+                        Console.WriteLine(filePath);
                         //Image imgPhoto = Image.FromFile(filePath);
                         using (var imgPhoto = await ReadFileAsync(filePath))
                         {
